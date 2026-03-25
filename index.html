@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Aline Ferraz - Acompanhante Premium em Campinas</title>
+    <title>Aline Ferraz - Premium Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,233 +19,380 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #0f0f0f;
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a0f2e 50%, #0f1a2e 100%);
             color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 127, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 100%);
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
             padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.1);
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, #ff007f, #00ffff, #ff007f) 1;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.3);
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #e91e63, #ff69b4);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff007f, #00ffff, #ff007f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5)); }
         }
 
         .whatsapp-btn {
-            background: #e91e63;
+            background: linear-gradient(135deg, #ff007f, #ff1493);
             color: white;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            border: none;
+            gap: 8px;
+            border: 2px solid #ff007f;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .whatsapp-btn:hover::before {
+            left: 100%;
         }
 
         .whatsapp-btn:hover {
-            background: #c2185b;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.8), 0 0 60px rgba(0, 255, 255, 0.4);
         }
 
         .hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 30px;
-            max-width: 1200px;
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 50px 15px;
+            padding: 60px 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #ffffff, #ff69b4);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #00ffff, #ff007f, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5)); }
+            50% { filter: drop-shadow(0 0 40px rgba(255, 0, 127, 0.5)); }
         }
 
         .hero-content .subtitle {
-            font-size: 16px;
-            color: #b0b0b0;
-            margin-bottom: 20px;
-            font-weight: 300;
+            font-size: 18px;
+            color: #00ffff;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
         .info-item {
-            background: rgba(233, 30, 99, 0.1);
-            padding: 12px;
+            background: rgba(255, 0, 127, 0.05);
+            padding: 15px;
             border-radius: 8px;
-            border-left: 3px solid #e91e63;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #ff007f, #00ffff) 1;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2), inset 0 0 15px rgba(0, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.4), inset 0 0 20px rgba(0, 255, 255, 0.1);
+            transform: translateY(-3px);
         }
 
         .info-item label {
             display: block;
-            font-size: 10px;
-            color: #b0b0b0;
+            font-size: 11px;
+            color: #00ffff;
             text-transform: uppercase;
-            margin-bottom: 4px;
-            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .info-item .value {
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ff007f;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #e91e63, #ff1493);
+            background: linear-gradient(135deg, #ff007f, #ff1493);
             color: white;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            border: none;
+            border: 2px solid #ff007f;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 15px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.8), 0 0 60px rgba(0, 255, 255, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: #e91e63;
-            padding: 12px 28px;
+            color: #00ffff;
+            padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            border: 2px solid #e91e63;
+            border: 2px solid #00ffff;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 15px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
         }
 
         .btn-secondary:hover {
-            background: rgba(233, 30, 99, 0.1);
-            transform: translateY(-3px);
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
         }
 
         .hero-image {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(135deg, #ff007f, #00ffff);
+            border-radius: 20px;
+            opacity: 0.3;
+            filter: blur(30px);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 320px;
+            max-width: 340px;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3);
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.4), 0 0 80px rgba(0, 255, 255, 0.2);
             animation: float 3s ease-in-out infinite;
             object-fit: cover;
             aspect-ratio: 3/4;
+            position: relative;
+            z-index: 2;
+            border: 2px solid #ff007f;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-15px); }
         }
 
         .gallery {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b2e 100%);
-            padding: 50px 15px;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.8), rgba(26, 15, 46, 0.8));
+            padding: 60px 15px;
+            position: relative;
+            z-index: 1;
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, #ff007f, #00ffff, #ff007f) 1;
         }
 
         .gallery-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .gallery-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .gallery-title h2 {
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff, #ff69b4);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #00ffff, #ff007f, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
         }
 
         .gallery-title p {
-            color: #b0b0b0;
-            font-size: 15px;
+            color: #ff007f;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
             aspect-ratio: 3/4;
+            border: 2px solid rgba(255, 0, 127, 0.3);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.2), rgba(0, 255, 255, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
         }
 
         .gallery-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.3);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 60px rgba(255, 0, 127, 0.6), 0 0 40px rgba(0, 255, 255, 0.4);
+            border-color: #ff007f;
         }
 
         .gallery-item img {
@@ -256,7 +403,7 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .gallery-overlay {
@@ -265,12 +412,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(233, 30, 99, 0.8), rgba(255, 20, 147, 0.8));
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.9), rgba(0, 255, 255, 0.9));
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 3;
         }
 
         .gallery-item:hover .gallery-overlay {
@@ -280,180 +428,222 @@
         .gallery-overlay-text {
             color: white;
             text-align: center;
-            font-weight: 600;
-            font-size: 13px;
+            font-weight: 700;
+            font-size: 14px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .about {
-            padding: 50px 15px;
-            max-width: 1200px;
+            padding: 60px 15px;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .about-text h2 {
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff, #ff69b4);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #00ffff, #ff007f, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
         }
 
         .about-text p {
             color: #b0b0b0;
-            font-size: 14px;
-            margin-bottom: 15px;
-            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 18px;
+            line-height: 1.8;
         }
 
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .feature {
-            background: rgba(233, 30, 99, 0.1);
-            padding: 15px;
+            background: rgba(255, 0, 127, 0.05);
+            padding: 18px;
             border-radius: 10px;
-            border-left: 3px solid #e91e63;
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #ff007f, #00ffff) 1;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
+            transform: translateY(-5px);
         }
 
         .feature h3 {
-            color: #e91e63;
-            margin-bottom: 6px;
-            font-size: 15px;
+            color: #ff007f;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
 
         .feature p {
-            color: #b0b0b0;
-            font-size: 12px;
+            color: #808080;
+            font-size: 13px;
+            margin: 0;
         }
 
         .about-image img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3);
+            box-shadow: 0 0 50px rgba(255, 0, 127, 0.4), 0 0 80px rgba(0, 255, 255, 0.2);
             object-fit: cover;
             aspect-ratio: 3/4;
+            border: 2px solid #ff007f;
         }
 
         footer {
-            background: #0a0a0a;
-            padding: 35px 15px;
+            background: rgba(10, 10, 20, 0.95);
+            padding: 40px 15px;
             text-align: center;
-            border-top: 1px solid rgba(233, 30, 99, 0.2);
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, #ff007f, #00ffff, #ff007f) 1;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .footer-content h3 {
-            color: #e91e63;
-            margin-bottom: 12px;
-            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .footer-content p {
             color: #808080;
-            margin-bottom: 12px;
-            font-size: 13px;
+            margin-bottom: 15px;
+            font-size: 14px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: 15px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
 
         .social-links a {
-            color: #e91e63;
+            color: #ff007f;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            font-size: 13px;
+            font-size: 14px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border: 2px solid #ff007f;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
         }
 
         .social-links a:hover {
-            color: #ff69b4;
+            color: #00ffff;
+            border-color: #00ffff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
         }
 
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
-                padding: 35px 15px;
-                gap: 25px;
+                padding: 40px 15px;
+                gap: 30px;
             }
 
             .hero-content h1 {
-                font-size: 28px;
-                margin-bottom: 8px;
+                font-size: 36px;
+                margin-bottom: 10px;
             }
 
             .hero-content .subtitle {
                 font-size: 14px;
-                margin-bottom: 15px;
+                margin-bottom: 18px;
             }
 
             .info-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 10px;
-                margin-bottom: 18px;
+                gap: 12px;
+                margin-bottom: 20px;
             }
 
             .info-item {
-                padding: 10px;
+                padding: 12px;
             }
 
             .info-item label {
-                font-size: 9px;
-                margin-bottom: 3px;
+                font-size: 10px;
+                margin-bottom: 4px;
             }
 
             .info-item .value {
-                font-size: 13px;
+                font-size: 14px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
             }
 
             .btn-primary, .btn-secondary {
                 width: 100%;
                 justify-content: center;
-                padding: 11px 20px;
+                padding: 12px 24px;
                 font-size: 13px;
             }
 
+            .hero-image::before {
+                width: 280px;
+                height: 360px;
+            }
+
             .hero-image img {
-                max-width: 260px;
+                max-width: 280px;
             }
 
             .gallery {
-                padding: 35px 15px;
+                padding: 40px 15px;
             }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 15px;
             }
 
             .gallery-title h2 {
-                font-size: 24px;
+                font-size: 28px;
                 margin-bottom: 8px;
             }
 
@@ -462,21 +652,21 @@
             }
 
             .gallery-title {
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
 
             .about {
-                padding: 35px 15px;
+                padding: 40px 15px;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 30px;
             }
 
             .about-text h2 {
-                font-size: 24px;
-                margin-bottom: 15px;
+                font-size: 28px;
+                margin-bottom: 18px;
             }
 
             .about-text p {
@@ -486,86 +676,89 @@
 
             .features {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                margin-top: 18px;
+                gap: 12px;
+                margin-top: 20px;
             }
 
             .feature {
-                padding: 12px;
+                padding: 14px;
             }
 
             .feature h3 {
                 font-size: 14px;
-                margin-bottom: 4px;
+                margin-bottom: 6px;
             }
 
             .feature p {
-                font-size: 11px;
+                font-size: 12px;
             }
 
             .header-content {
-                gap: 8px;
+                gap: 10px;
             }
 
             .logo {
                 font-size: 18px;
+                letter-spacing: 1px;
             }
 
             .whatsapp-btn {
-                padding: 7px 14px;
+                padding: 8px 16px;
                 font-size: 11px;
+                letter-spacing: 0.5px;
             }
 
             footer {
-                padding: 25px 15px;
+                padding: 30px 15px;
             }
 
             .footer-content h3 {
                 font-size: 16px;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
 
             .footer-content p {
                 font-size: 12px;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
 
             .social-links {
                 gap: 10px;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
 
             .social-links a {
-                font-size: 12px;
+                font-size: 11px;
+                padding: 6px 12px;
             }
         }
 
         @media (max-width: 480px) {
             .hero {
-                padding: 25px 12px;
+                padding: 30px 12px;
                 gap: 20px;
             }
 
             .hero-content h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
 
             .hero-content .subtitle {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .info-grid {
                 grid-template-columns: 1fr;
-                gap: 8px;
+                gap: 10px;
             }
 
             .gallery-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 15px;
             }
 
             .gallery-title h2 {
-                font-size: 22px;
+                font-size: 24px;
             }
 
             .gallery-title p {
@@ -573,11 +766,11 @@
             }
 
             .about {
-                padding: 25px 12px;
+                padding: 30px 12px;
             }
 
             .about-text h2 {
-                font-size: 22px;
+                font-size: 24px;
             }
 
             .about-text p {
@@ -586,11 +779,16 @@
 
             .btn-primary, .btn-secondary {
                 font-size: 12px;
-                padding: 10px 18px;
+                padding: 10px 20px;
             }
 
             .hero-image img {
-                max-width: 220px;
+                max-width: 240px;
+            }
+
+            .hero-image::before {
+                width: 240px;
+                height: 320px;
             }
 
             .features {
@@ -598,7 +796,7 @@
             }
 
             footer {
-                padding: 20px 12px;
+                padding: 25px 12px;
             }
 
             .header-content {
@@ -607,10 +805,11 @@
 
             .logo {
                 font-size: 16px;
+                letter-spacing: 0.5px;
             }
 
             .whatsapp-btn {
-                padding: 6px 12px;
+                padding: 7px 14px;
                 font-size: 10px;
             }
         }
@@ -619,33 +818,33 @@
 <body>
     <header>
         <div class="header-content">
-            <div class="logo">✨ Aline</div>
+            <div class="logo">⚡ ALINE</div>
             <a href="https://wa.me/5519981880903?text=Olá%20Aline!%20Gostaria%20de%20agendar%20um%20encontro" class="whatsapp-btn">
-                💬 Mensagem
+                💬 Contato
             </a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Aline Ferraz</h1>
-            <p class="subtitle">Acompanhante Premium em Campinas, SP</p>
+            <h1>ALINE FERRAZ</h1>
+            <p class="subtitle">⚡ Premium Experience ⚡</p>
             
             <div class="info-grid">
                 <div class="info-item">
-                    <label>Idade</label>
+                    <label>🎂 Idade</label>
                     <div class="value">25 anos</div>
                 </div>
                 <div class="info-item">
-                    <label>Localização</label>
+                    <label>📍 Local</label>
                     <div class="value">Campinas, SP</div>
                 </div>
                 <div class="info-item">
-                    <label>Disponibilidade</label>
-                    <div class="value">Todos os dias</div>
+                    <label>⏰ Disponível</label>
+                    <div class="value">24/7</div>
                 </div>
                 <div class="info-item">
-                    <label>Atendimento</label>
+                    <label>✨ Status</label>
                     <div class="value">Premium</div>
                 </div>
             </div>
@@ -668,58 +867,58 @@
     <section class="gallery" id="galeria">
         <div class="gallery-container">
             <div class="gallery-title">
-                <h2>Galeria Exclusiva</h2>
-                <p>Conheça melhor a Aline Ferraz</p>
+                <h2>GALERIA EXCLUSIVA</h2>
+                <p>✨ Conheça a Aline Ferraz ✨</p>
             </div>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_001_eb5b_316f3ba2.jpg" alt="Foto 1" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_002_bbb2_910641ad.jpg" alt="Foto 2" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_003_9cd6_f5dc74c1.jpg" alt="Foto 3" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_004_ef98_9fdbb705.jpg" alt="Foto 4" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_005_139a_4805f761.jpg" alt="Foto 5" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_006_a88d_b060c12a.jpg" alt="Foto 6" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_008_5b22_55805373.jpg" alt="Foto 7" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_009_a3a1_9ab134c5.jpg" alt="Foto 8" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_010_6a81_fe8630c3.jpg" alt="Foto 9" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_012_6539_66be4c57.jpg" alt="Foto 10" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_014_21b5_403758d9.jpg" alt="Foto 11" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663438102501/2w5iFNez2nrk3skA4tuWn9/13435771_015_b9ed_15c0f407.jpg" alt="Foto 12" loading="lazy">
-                    <div class="gallery-overlay"><div class="gallery-overlay-text">Foto Premium</div></div>
+                    <div class="gallery-overlay"><div class="gallery-overlay-text">Premium</div></div>
                 </div>
             </div>
         </div>
@@ -728,26 +927,26 @@
     <section class="about">
         <div class="about-content">
             <div class="about-text">
-                <h2>Sobre Mim</h2>
-                <p>Olá! Sou a Aline Ferraz, uma acompanhante premium em Campinas com 25 anos. Sou conhecida por meu atendimento de qualidade, discrição e profissionalismo.</p>
-                <p>Ofereço um atendimento personalizado e de excelência, sempre focando em proporcionar momentos inesquecíveis aos meus clientes.</p>
+                <h2>SOBRE MIM</h2>
+                <p>Olá! Sou a Aline Ferraz, uma acompanhante premium em Campinas. Ofereço experiências inesquecíveis com total discrição e profissionalismo.</p>
+                <p>Meu diferencial é o atendimento personalizado, elegância e sofisticação em cada encontro. Sou conhecida por meu carisma, beleza e capacidade de proporcionar momentos memoráveis.</p>
                 
                 <div class="features">
                     <div class="feature">
-                        <h3>✨ Discrição</h3>
-                        <p>Total sigilo e privacidade garantidos</p>
+                        <h3>🔐 DISCRIÇÃO</h3>
+                        <p>Total sigilo garantido</p>
                     </div>
                     <div class="feature">
-                        <h3>💎 Premium</h3>
-                        <p>Atendimento de alta qualidade</p>
+                        <h3>💎 PREMIUM</h3>
+                        <p>Atendimento de luxo</p>
                     </div>
                     <div class="feature">
-                        <h3>🎯 Pontual</h3>
-                        <p>Sempre presente nos horários</p>
+                        <h3>⏱️ PONTUAL</h3>
+                        <p>Sempre no horário</p>
                     </div>
                     <div class="feature">
-                        <h3>💬 Comunicativa</h3>
-                        <p>Sempre aberta a conversar</p>
+                        <h3>🎯 DEDICADA</h3>
+                        <p>100% focada em você</p>
                     </div>
                 </div>
             </div>
@@ -760,12 +959,12 @@
 
     <footer>
         <div class="footer-content">
-            <h3>Entre em Contato</h3>
+            <h3>⚡ ENTRE EM CONTATO ⚡</h3>
             <div class="social-links">
-                <a href="https://wa.me/5519981880903">📱 WhatsApp: (19) 98188-0903</a>
+                <a href="https://wa.me/5519981880903">📱 WhatsApp</a>
             </div>
-            <p>Campinas, SP | Atendimento Premium</p>
-            <p style="font-size: 11px; margin-top: 12px; color: #606060;">© 2026 Aline Ferraz. Todos os direitos reservados.</p>
+            <p>Campinas, SP | Atendimento 24/7</p>
+            <p style="font-size: 12px; margin-top: 15px; color: #606060;">© 2026 Aline Ferraz. Todos os direitos reservados.</p>
         </div>
     </footer>
 
